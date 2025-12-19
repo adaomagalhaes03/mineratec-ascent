@@ -63,8 +63,10 @@ export const Pricing = () => {
   return (
     <section id="planos" className="py-24 relative overflow-hidden" ref={ref}>
       {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-b from-muted/30 via-background to-muted/30" />
+      <div className="absolute inset-0 bg-gradient-to-b from-background via-muted/20 to-background" />
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/5 rounded-full blur-3xl" />
+      <div className="absolute top-20 left-10 w-32 h-32 border border-primary/10 rounded-full" />
+      <div className="absolute bottom-20 right-20 w-48 h-48 border border-primary/10 rounded-full" />
 
       <div className="container mx-auto px-4 relative z-10">
         {/* Section Header */}
@@ -77,9 +79,10 @@ export const Pricing = () => {
           <span className="text-primary font-medium text-sm tracking-widest uppercase mb-4 block">
             Cartões e Planos
           </span>
-          <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
+          <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold mb-4 text-foreground">
             Planos <span className="text-gradient-gold">Acessíveis</span>
           </h2>
+          <div className="divider-gold mx-auto mb-6" />
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
             Escolha o plano ideal para a sua cooperativa. Todos os planos incluem suporte dedicado e acesso à nossa equipa de especialistas.
           </p>
@@ -108,8 +111,8 @@ export const Pricing = () => {
               <div
                 className={`relative h-full rounded-3xl overflow-hidden transform-3d transition-all duration-500 ${
                   plan.popular
-                    ? 'bg-gradient-to-b from-primary/20 via-card to-card border-2 border-primary shadow-xl shadow-primary/20'
-                    : 'glass-card border border-border hover:border-primary/50'
+                    ? 'bg-gradient-to-b from-primary/10 via-background to-background border-2 border-primary shadow-2xl shadow-primary/20'
+                    : 'elegant-card'
                 }`}
               >
                 {/* Card Content */}

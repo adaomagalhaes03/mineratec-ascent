@@ -52,7 +52,9 @@ export const Team = () => {
   return (
     <section id="equipa" className="py-24 relative" ref={ref}>
       {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-b from-background via-muted/20 to-background" />
+      <div className="absolute inset-0 bg-gradient-to-b from-background via-muted/30 to-background" />
+      <div className="absolute top-20 right-20 w-64 h-64 border border-primary/10 rounded-full" />
+      <div className="absolute bottom-20 left-10 w-32 h-32 bg-primary/5 rounded-full blur-2xl" />
 
       <div className="container mx-auto px-4 relative z-10">
         {/* Section Header */}
@@ -65,9 +67,10 @@ export const Team = () => {
           <span className="text-primary font-medium text-sm tracking-widest uppercase mb-4 block">
             Nossa Equipa
           </span>
-          <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
+          <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold mb-4 text-foreground">
             Conheça os <span className="text-gradient-gold">Especialistas</span>
           </h2>
+          <div className="divider-gold mx-auto mb-6" />
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
             Uma equipa multidisciplinar dedicada a oferecer as melhores soluções para o setor mineiro
           </p>
@@ -83,7 +86,7 @@ export const Team = () => {
               transition={{ duration: 0.6, delay: index * 0.1 }}
               className="group"
             >
-              <div className="glass-card rounded-2xl overflow-hidden hover-gold-glow transition-all duration-500 hover:-translate-y-2">
+              <div className="elegant-card rounded-2xl overflow-hidden">
                 {/* Image */}
                 <div className="relative h-64 overflow-hidden">
                   <img
@@ -91,11 +94,11 @@ export const Team = () => {
                     alt={member.name}
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-card via-transparent to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />
                   
                   {/* Department Badge */}
                   <div className="absolute top-4 left-4">
-                    <span className="px-3 py-1 text-xs font-medium bg-primary/90 text-primary-foreground rounded-full">
+                    <span className="px-3 py-1 text-xs font-medium bg-primary text-white rounded-full shadow-lg">
                       {member.department}
                     </span>
                   </div>
@@ -106,7 +109,7 @@ export const Team = () => {
                   <h3 className="font-display text-lg font-semibold text-foreground mb-1 line-clamp-1">
                     {member.name}
                   </h3>
-                  <p className="text-primary text-sm">{member.role}</p>
+                  <p className="text-primary text-sm font-medium">{member.role}</p>
                 </div>
               </div>
             </motion.div>

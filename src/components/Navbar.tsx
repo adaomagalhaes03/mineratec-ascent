@@ -1,7 +1,8 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, Phone, Mail } from 'lucide-react';
 import { Button } from './ui/button';
+import { ConsultationModal } from './ConsultationModal';
 import logo from '@/assets/logo-mineratec.jpeg';
 
 const navItems = [
@@ -16,15 +17,7 @@ const navItems = [
 
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
     <>
@@ -49,11 +42,7 @@ export const Navbar = () => {
       <motion.nav
         initial={{ y: -100 }}
         animate={{ y: 0 }}
-        className={`fixed top-0 lg:top-10 left-0 right-0 z-50 transition-all duration-500 ${
-          scrolled
-            ? 'bg-background/95 backdrop-blur-xl shadow-lg shadow-background/50'
-            : 'bg-transparent'
-        }`}
+        className="relative z-50 bg-background border-b border-border/50 shadow-sm"
       >
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between h-20">
@@ -85,7 +74,7 @@ export const Navbar = () => {
 
             {/* CTA Button */}
             <div className="hidden lg:block">
-              <Button variant="gold" size="lg">
+              <Button variant="gold" size="lg" onClick={() => setIsModalOpen(true)}>
                 Solicitar Consultoria
               </Button>
             </div>
@@ -120,7 +109,7 @@ export const Navbar = () => {
                     {item.name}
                   </a>
                 ))}
-                <Button variant="gold" className="w-full mt-4">
+                <Button variant="gold" className="w-full mt-4" onClick={() => { setIsOpen(false); setIsModalOpen(true); }}>
                   Solicitar Consultoria
                 </Button>
               </div>
@@ -128,6 +117,8 @@ export const Navbar = () => {
           )}
         </AnimatePresence>
       </motion.nav>
+
+      <ConsultationModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </>
   );
 };

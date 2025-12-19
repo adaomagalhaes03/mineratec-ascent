@@ -39,7 +39,7 @@ export const About = () => {
   return (
     <section id="sobre" className="py-24 relative overflow-hidden" ref={ref}>
       {/* Background Elements */}
-      <div className="absolute inset-0 bg-gradient-to-b from-background via-muted/20 to-background" />
+      <div className="absolute inset-0 bg-gradient-to-b from-background via-muted/30 to-background" />
       <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
       <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
 
@@ -54,9 +54,10 @@ export const About = () => {
           <span className="text-primary font-medium text-sm tracking-widest uppercase mb-4 block">
             Quem Somos
           </span>
-          <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
+          <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold mb-4 text-foreground">
             Sobre a <span className="text-gradient-gold">MINERATEC</span>
           </h2>
+          <div className="divider-gold mx-auto mb-6" />
           <p className="text-muted-foreground text-lg max-w-3xl mx-auto">
             A Mineratec é uma Multiconsultória que agrega diversos tipos de serviços com um único objetivo: 
             apoiar as cooperativas mineiras de Angola com excelência em contabilidade, auditoria e marketing.
@@ -73,9 +74,9 @@ export const About = () => {
               transition={{ duration: 0.6, delay: index * 0.1 }}
               className="group relative"
             >
-              <div className="glass-card rounded-2xl p-6 h-full hover-gold-glow transition-all duration-300 hover:-translate-y-2">
-                <div className="w-14 h-14 rounded-xl bg-gradient-gold flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-                  <feature.icon className="w-7 h-7 text-primary-foreground" />
+              <div className="elegant-card rounded-2xl p-6 h-full">
+                <div className="w-14 h-14 rounded-xl bg-gradient-gold flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                  <feature.icon className="w-7 h-7 text-white" />
                 </div>
                 <h3 className="font-display text-xl font-semibold mb-2 text-foreground">
                   {feature.title}
